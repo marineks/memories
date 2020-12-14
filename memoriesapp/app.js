@@ -1,3 +1,6 @@
+require("dotenv").config();
+require("./config/mongo");
+
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -14,6 +17,7 @@ const SpotifyWebApi = require("spotify-web-api-node");
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const memoriesRouter = require("./routes/memories");
 
 const app = express();
 
@@ -30,6 +34,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/memories', memoriesRouter);
+
 
 // spotify setup
 
@@ -69,8 +75,7 @@ app.use(function(err, req, res, next) {
 // app.use("/", indexRouter);
 
 //Define Routers
-//const memoriesRouter = require("./routes/memories");
+
 //const spotifyRouter = require("./routes/spotify");
-//const usersRouter = require("./routes/users");
 
 module.exports = app;

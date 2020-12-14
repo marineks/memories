@@ -1,0 +1,32 @@
+  <form action="/memories/create" method="post" class="add-product-form">
+    {{#if msg}}
+    <p class="msg {{msg.statu}}">{{msg.txt}}</p>
+    <p class="msg {{msg.status}}">{{msg.txt}}</p>
+    {{/if}}
+    <h3 class="form-title">Add a new memory to your board</h3>
+    <div class="form-item-wrapper flexed-item">
+      <label for="sneaker-name" class="label-name label">Write down your title</label>
+      <input id="sneaker-name" type="text" name="title" class="input-text input" placeholder="new log"
+        value="air max 1">
+    </div>
+    <div class="form-item-wrapper flexed-item">
+      <label for="sneaker-ref" class="label-ref label">Song</label>
+      <input id="sneaker-ref" type="text" name="song" class="input-text input" placeholder="ex: NV23498" value="NV23498">
+    </div>
+    <div class="form-item-wrapper flexed-item">
+      <label for="sneaker-size" class="label-ref label">Mood</label>
+      <input id="sneaker-size" type="text" name="mood" class="input-text input" placeholder="ex: 37" value="salut">
+    </div>
+    <div class="form-item-wrapper flexed-item">
+      <label for="sneaker-descr" class="label-descr label">Description</label>
+      <input id="sneaker-descr" type="text" name="description" class="input-text input"
+        placeholder="The better sneakers to run" value="foo bar baz">
+    </div>
+    <div class="form-item-wrapper flexed-item">
+      <label for="sneaker-price" class="label-price label">Date</label>
+      
+      <input id="sneaker-price" type="date" name="date" class="sneaker-price input" value="2020-11-05">
+    </div>
+    
+    <button class="button-primary add-sneaker-btn">Add to your board</button>
+  </form>

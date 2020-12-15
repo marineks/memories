@@ -1,0 +1,28 @@
+<section class="sign form-container">
+    <header class="form-header">
+        <h1 class="form-title">Welcome to Rememories</h1>
+        <p class="form-subtitle"> Create your account </p>
+    </header>
+    {{#if msg}}
+    <p class="message {{msg.status}}">{{msg.text}}</p>
+    {{/if}}
+    <form method="post" action="/auth/signup" id="form_user">
+        <div class="form-item-wrapper flexed-item">
+            <label for="username" class="label-ref label">Username</label>
+            <input id="username" type="text" name="username" class="input-text input" placeholder="jumagatron" required
+                value="bar">
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="email" class="label-ref label">Email</label>
+            <input id="email" type="text" name="email" class="input-text input" placeholder="foo@foo.foo" required
+                value="foo@foo.foo">
+        </div>
+        <div class="form-item-wrapper flexed-item">
+            <label for="password" class="label-ref label">Password</label>
+            <input id="password" type="password" name="password" class="input-text input" placeholder="••••••" required
+                value="1234">
+        </div>
+        <button class="button-primary white">Create Account</button>
+    </form>
+    <p class="form-sub-infos">Already have an account ? <a href="/auth/signin" class="button-link-form">Sign In</a></p>
+</section>

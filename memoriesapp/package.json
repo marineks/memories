@@ -7,6 +7,7 @@
     "dev": "nodemon ./bin/www -e js,hbs"
   },
   "dependencies": {
+    "bcrypt": "^5.0.0",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^3.2.0",
     "cookie-parser": "^1.4.5",

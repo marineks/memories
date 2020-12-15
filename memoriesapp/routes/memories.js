@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const MemoriesModel = require("./../models/Memories");
+const protectPrivateRoute = require("./../middlewares/exposePrivateRoute");
 
 //// READ ALL MEMORIES
 
@@ -8,7 +9,7 @@ const MemoriesModel = require("./../models/Memories");
 router.get("/your-profile", async (req, res, next) => {
     
     try {
-        const allMemories = await MemoriesModel.find();
+        const allMemories = await MemoriesModel.find().sort({ createdAt: -1 });
         //console.log(allMemories)
         res.render("profile", { allMemories });
     } catch (err) {
@@ -18,14 +19,14 @@ router.get("/your-profile", async (req, res, next) => {
 
 //// CREATE A MEMORY
 // Route: GET  localhost:3000/memories/create
-router.get("/create", (req, res) => {
+router.get("/create", protectPrivateRoute, (req, res) => {
         res.render("createMemory");
 });
 
 
 //// READ A MEMORY
 // Route: localhost:3000/memories/:id
-router.get("/:id", async (req, res, next) => {
+router.get("/:id", protectPrivateRoute, async (req, res, next) => {
     
     try {
         const oneMemory = await MemoriesModel.findById(req.params.id);
@@ -38,11 +39,11 @@ router.get("/:id", async (req, res, next) => {
 
 
 // Route: CREATE POST localhost:3000/memories/create
-router.post("/create", async (req, res, next) => {
+router.post("/create", protectPrivateRoute, async (req, res, next) => {
       try {
         const createMem = { ...req.body }
         await MemoriesModel.create(createMem);
-        console.log(req.body); // rend un objet vide!!!! why????
+        console.log(req.body); 
         res.redirect("/memories/your-profile");
       } catch (err) {
         next(err);
@@ -51,7 +52,7 @@ router.post("/create", async (req, res, next) => {
   );
 
 // DELETE A MEMORY
-router.get("/delete/:id", async (req, res, next) => {
+router.get("/delete/:id", protectPrivateRoute, async (req, res, next) => {
     try {
       await MemoriesModel.findByIdAndRemove(req.params.id);
       res.redirect("/memories/your-profile");
@@ -62,7 +63,7 @@ router.get("/delete/:id", async (req, res, next) => {
 
 //// UPDATE A MEMORY
 // Route: GET localhost:3000/memories/update/:id
-router.get("/update/:id", async (req, res, next) => {
+router.get("/update/:id", protectPrivateRoute, async (req, res, next) => {
       try {
         const updateMemory = await MemoriesModel.findById(req.params.id);
         console.log(req.params.id);
@@ -73,8 +74,8 @@ router.get("/update/:id", async (req, res, next) => {
     }
   );
 
-// Route: GET localhost:3000/memories/update/:id
-router.post("/update/:id", async (req, res, next) => {
+// Route: POST localhost:3000/memories/update/:id
+router.post("/update/:id", protectPrivateRoute, async (req, res, next) => {
       try {
           //console.log(req.body);
         await MemoriesModel.findByIdAndUpdate(

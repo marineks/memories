@@ -11,8 +11,12 @@ const memoriesSchema = new Schema(
     mood: String,
     description: String,
     date: Date,
+    isPublic: { 
+      type: Boolean,
+      default: false
+    }
   },
-  //{ timestamps: true }
+  { timestamps: true }
 );
 
 const MemoriesModel = mongoose.model("memory", memoriesSchema);

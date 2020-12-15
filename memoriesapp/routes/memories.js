@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const MemoriesModel = require("./../models/Memories");
-const protectPrivateRoute = require("./../middlewares/exposePrivateRoute");
+const protectPrivateRoute = require("./../middlewares/protectPrivateRoute");
 
 //// READ ALL MEMORIES
 

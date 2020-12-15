@@ -1,0 +1,12 @@
+{{!-- PART ABOUT SPOTIFY --}}
+{{#each tracks}}
+
+{{#if this.preview_url}}
+
+<h3>{{this.name}}</h3>
+<audio src="{{this.preview_url}}" controls></audio>
+<a href="/memories/your-profile">Add</a>
+{{/if}}
+
+{{/each}}
+{{!-- END OF PART WITH SPOTIFY --}}

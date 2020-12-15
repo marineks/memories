@@ -39,15 +39,29 @@ app.use('/memories', memoriesRouter);
 
 // spotify setup
 
-// const spotifyApi = new SpotifyWebApi({
-//   clientId: process.env.CLIENT_ID,
-//   clientSecret: process.env.CLIENT_SECRET
-// });
+const spotifyApi = new SpotifyWebApi({
+  clientId: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET
+});
 
-// spotifyApi
-// .clientCredentialsGrant()
-// .then(data => spotifyApi.setAccessToken(data.body['access_token']))
-// .catch(error => console.log('Something went wrong when retrieving an access token', error));
+spotifyApi
+.clientCredentialsGrant()
+.then(data => spotifyApi.setAccessToken(data.body['access_token']))
+.catch(error => console.log('Something went wrong when retrieving an access token', error));
+
+// spotify ROUTES (to be moved later)
+
+  app.get("/test", async (req, res) => {
+    
+      const searchTracks = spotifyApi.searchTracks(req.query.search)
+      searchTracks.then(data => {
+              console.log('The received data from the API: ', data.body);
+              res.render('test',  { tracks: data.body.tracks.items})
+          })
+          .catch(err => console.log('The error while searching artists occurred: ', err));
+
+    });
+  
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -74,8 +88,5 @@ app.use(function(err, req, res, next) {
 
 // app.use("/", indexRouter);
 
-//Define Routers
-
-//const spotifyRouter = require("./routes/spotify");
 
 module.exports = app;

@@ -14,7 +14,7 @@ router.post("/signup", async (req, res, next) => {
     const foundUser = await UserModel.findOne({ email: newUser.email });
 
     if (foundUser) {
-      //req.flash("warning", "This email is already linked to an account");
+      req.flash("warning", "This email is already linked to an account");
       res.redirect("/auth/signin");
     } else {
       const hashedPassword = bcrypt.hashSync(newUser.password, 10);

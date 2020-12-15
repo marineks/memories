@@ -8,7 +8,7 @@ const MemoriesModel = require("./../models/Memories");
 router.get("/your-profile", async (req, res, next) => {
     
     try {
-        const allMemories = await MemoriesModel.find();
+        const allMemories = await MemoriesModel.find().sort({ createdAt: -1 });
         //console.log(allMemories)
         res.render("profile", { allMemories });
     } catch (err) {
@@ -42,7 +42,7 @@ router.post("/create", async (req, res, next) => {
       try {
         const createMem = { ...req.body }
         await MemoriesModel.create(createMem);
-        console.log(req.body); // rend un objet vide!!!! why????
+        console.log(req.body); 
         res.redirect("/memories/your-profile");
       } catch (err) {
         next(err);
@@ -73,7 +73,7 @@ router.get("/update/:id", async (req, res, next) => {
     }
   );
 
-// Route: GET localhost:3000/memories/update/:id
+// Route: POST localhost:3000/memories/update/:id
 router.post("/update/:id", async (req, res, next) => {
       try {
           //console.log(req.body);

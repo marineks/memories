@@ -1,5 +1,8 @@
+// BASIC CONFIG
+
 require("dotenv").config();
 require("./config/mongo");
+require("./helpers/hbs");
 
 const createError = require("http-errors");
 const express = require("express");
@@ -15,11 +18,6 @@ const MongoStore = require("connect-mongo")(session);
 const SpotifyWebApi = require("spotify-web-api-node");
 const dev_mode = false;
 
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
-const memoriesRouter = require("./routes/memories");
-const authRouter = require("./routes/auth");
-
 const app = express();
 app.use(logger("dev"));
 
@@ -34,10 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/", indexRouter);
-app.use("/users", usersRouter);
-app.use("/memories", memoriesRouter);
-app.use("/auth", authRouter);
+
 
 app.use(
   session({
@@ -53,6 +48,7 @@ app.use(
 );
 
 app.use(flash());
+
 // spotify setup
 
 const spotifyApi = new SpotifyWebApi({
@@ -67,17 +63,57 @@ spotifyApi
 
 // spotify ROUTES (to be moved later)
 
-  app.get("/test", async (req, res) => {
+/// => Here when the form is submitted, tracks appear according to the user's search
+  const searchSomeTracks = app.get("/choose-song", async (req, res) => {
     
       const searchTracks = spotifyApi.searchTracks(req.query.search)
       searchTracks.then(data => {
-              console.log('The received data from the API: ', data.body);
-              res.render('test',  { tracks: data.body.tracks.items})
+              console.log('The received data from the API: ', data);
+              res.render('createMemory',  { tracks: data.body.tracks.items})
           })
           .catch(err => console.log('The error while searching artists occurred: ', err));
 
     });
+
+/// => Here when we get the tracks (clicking on the "add" a), add the song to the Memory model
+  /////// MARCHE PAS
+// app.get("/choose-song/:id", async (req, res, next) => {
+    
+  //     spotifyApi
+  //       .getTrack(trackId) // ou alors req.params.id ? data.body.tracks.items.id ? uri ?
+  //       .then(data => {
+  //             console.log('The received data from the API: ', data.body);
+  //             res.render('createMemory',  { track: data.body.track.items})
+  //       })
+  //       .catch(function(error) {
+  //         console.error(error);
+  //       })
+  //     });
   
+
+  
+
+// MIDDLEWARES (ALWAYS HAS TO BE BEFORE THE ROUTES)
+
+if (dev_mode === true) {
+  app.use(require("./middlewares/devMode")); // triggers dev mode during dev phase
+  app.use(require("./middlewares/debugSessionInfos")); // displays session debug
+}
+
+app.use(require("./middlewares/exposeLoginStatus"));
+app.use(require("./middlewares/exposeFlashMessage"));
+
+// ROUTES
+
+const indexRouter = require("./routes/index");
+const usersRouter = require("./routes/users");
+const memoriesRouter = require("./routes/memories");
+const authRouter = require("./routes/auth");
+
+app.use("/", indexRouter);
+app.use("/users", usersRouter);
+app.use("/memories", memoriesRouter);
+app.use("/auth", authRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -94,16 +130,5 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
-
-// MIDDLEWARES
-
-if (dev_mode === true) {
-  app.use(require("./middlewares/devMode")); // triggers dev mode during dev phase
-  app.use(require("./middlewares/debugSessionInfos")); // displays session debug
-}
-
-app.use(require("./middlewares/exposeLoginStatus"));
-app.use(require("./middlewares/exposeFlashMessage"));
-
 
 module.exports = app;

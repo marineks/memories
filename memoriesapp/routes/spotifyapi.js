@@ -2,6 +2,8 @@
 // const router = express.Router();
 // const SpotifyWebApi = require('spotify-web-api-node');
 
+// const { update } = require("../models/Users")
+
 // const spotifyAPi = require("./../app");
 
 // app.get("/", async (req, res) => {
@@ -19,3 +21,6 @@
 //         })
 //         .catch(err => console.log('The error while searching artists occurred: ', err));
 //   });
+
+// une fois que ça créé, on peut update avec add = update ce qu'on a créé en rajoutant le champ url
+// = en mémoire grâce à route ou req.query / req.params.id quel est le truc à updater

@@ -7,39 +7,55 @@
     <div class="form-item-wrapper flexed-item">
       <label for="sneaker-name" class="label-name label">Write down your title</label>
       <input id="sneaker-name" type="text" name="title" class="input-text input" placeholder="new log"
-        value="air max 1">
+        value="">
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="sneaker-ref" class="label-ref label">Song</label>
-      <input id="sneaker-ref" type="text" name="song" class="input-text input" placeholder="ex: NV23498" value="NV23498">
-    </div>
+      <input id="sneaker-ref" type="text" name="song" class="input-text input" placeholder="Copy/paste the url of your YT video" value="">
+    </div> 
     
 
      <div class="form-item-wrapper flexed-item">
       <label for="sneaker-size" class="label-ref label">Who I was with</label>
-      <input id="sneaker-size" type="text" name="waswith" class="input-text input" placeholder="ex: 37" value="Jacqueline">
+      <input id="sneaker-size" type="text" name="waswith" class="input-text input" placeholder="ex: 37" value="">
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="sneaker-size" class="label-ref label">Mood</label>
-      <input id="sneaker-size" type="text" name="mood" class="input-text input" placeholder="ex: 37" value="salut">
+      <input id="sneaker-size" type="text" name="mood" class="input-text input" placeholder="ex: 37" value="">
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="sneaker-descr" class="label-descr label">Description</label>
       <input id="sneaker-descr" type="text" name="description" class="input-text input"
-        placeholder="The better sneakers to run" value="foo bar baz">
+        placeholder="The better sneakers to run" value="">
     </div>
     <div class="form-item-wrapper flexed-item">
       <label for="sneaker-price" class="label-price label">Date</label>
       
-      <input id="sneaker-price" type="date" name="date" class="sneaker-price input" value="2020-11-05">
+      <input id="sneaker-price" type="date" name="date" class="sneaker-price input" value="">
     </div>
+
+    <button class="button-primary add-sneaker-btn">Add to your board</button> 
+    {{!-- envoyer method custom pour cehcker les values et ajouter preview url --}}
     
-    <button class="button-primary add-sneaker-btn">Add to your board</button>
   </form>
 
-  {{!-- PART ABOUT SPOTIFY --}}
-    <form action="/test" method="get">
+  {{!-- PART ABOUT SPOTIFY
+    <form action="/choose-song" method="get">
       <input type="text" name="search" required>
       <button>Search for an Artist</button>
     </form>
-    {{!-- END OF PART WITH SPOTIFY --}}
+    
+{{#each tracks}}
+
+{{#if this.preview_url}}
+
+<h3>{{this.name}}</h3>
+<audio id="preview" src="{{this.preview_url}}" controls></audio>
+<a href="/choose-song/{{this.trackId}}">Add</a>
+
+{{/if}}
+
+{{/each}}
+ END OF PART WITH SPOTIFY --}}
+
+

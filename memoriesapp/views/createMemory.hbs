@@ -13,6 +13,12 @@
       <label for="sneaker-ref" class="label-ref label">Song</label>
       <input id="sneaker-ref" type="text" name="song" class="input-text input" placeholder="ex: NV23498" value="NV23498">
     </div>
+    
+
+     <div class="form-item-wrapper flexed-item">
+      <label for="sneaker-size" class="label-ref label">Who I was with</label>
+      <input id="sneaker-size" type="text" name="waswith" class="input-text input" placeholder="ex: 37" value="Jacqueline">
+    </div>
     <div class="form-item-wrapper flexed-item">
       <label for="sneaker-size" class="label-ref label">Mood</label>
       <input id="sneaker-size" type="text" name="mood" class="input-text input" placeholder="ex: 37" value="salut">
@@ -30,3 +36,10 @@
     
     <button class="button-primary add-sneaker-btn">Add to your board</button>
   </form>
+
+  {{!-- PART ABOUT SPOTIFY --}}
+    <form action="/test" method="get">
+      <input type="text" name="search" required>
+      <button>Search for an Artist</button>
+    </form>
+    {{!-- END OF PART WITH SPOTIFY --}}

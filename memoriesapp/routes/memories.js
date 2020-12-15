@@ -9,7 +9,7 @@ router.get("/your-profile", async (req, res, next) => {
     
     try {
         const allMemories = await MemoriesModel.find();
-        //console.log(allMemories);
+        //console.log(allMemories)
         res.render("profile", { allMemories });
     } catch (err) {
         next(err);

@@ -2,7 +2,12 @@
 
 {{#each allMemories}}
 <h3>Title: {{this.title}}</h3>
-<audio id="preview" src="{{this.song}}" controls></audio>
+{{!-- <audio id="preview"
+  src="{{this.song}}" controls>
+</audio> --}}
+<video src="{{this.song}}" controls>
+  Your browser does not support the video tag.
+</video>
 <h3>Description: {{this.description}}</h3>
 
 

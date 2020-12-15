@@ -1,6 +1,10 @@
-<a href="/auth/signup" id="nav-signin" class="button-ternary flexed-item nav-end-item">
+<a href="/auth/signup" id="nav-signup" class="button-ternary flexed-item nav-end-item">
     <span class="btn-text">Sign up</span>
 </a>
-<a href="/auth/signin" id="nav-signout" class="button-ternary flexed-item nav-end-item">
+<a href="/auth/signin" id="nav-signin" class="button-ternary flexed-item nav-end-item">
     <span class="btn-text">Sign In</span>
 </a>
+ {{#if isLoggedIn}}
+      <a class="link" href="/users/manage-account">| <i class="fa fa-user fa-1x"></i></a>
+      <a class="link" href="/auth/logout">Log Out</a>
+{{/if}}

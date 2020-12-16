@@ -48,49 +48,6 @@ app.use(
 );
 
 app.use(flash());
-
-// spotify setup
-
-const spotifyApi = new SpotifyWebApi({
-  clientId: process.env.CLIENT_ID,
-  clientSecret: process.env.CLIENT_SECRET
-});
-
-spotifyApi
-.clientCredentialsGrant()
-.then(data => spotifyApi.setAccessToken(data.body['access_token']))
-.catch(error => console.log('Something went wrong when retrieving an access token', error));
-
-// spotify ROUTES (to be moved later)
-
-/// => Here when the form is submitted, tracks appear according to the user's search
-  const searchSomeTracks = app.get("/choose-song", async (req, res) => {
-    
-      const searchTracks = spotifyApi.searchTracks(req.query.search)
-      searchTracks.then(data => {
-              console.log('The received data from the API: ', data);
-              res.render('createMemory',  { tracks: data.body.tracks.items})
-          })
-          .catch(err => console.log('The error while searching artists occurred: ', err));
-
-    });
-
-/// => Here when we get the tracks (clicking on the "add" a), add the song to the Memory model
-  /////// MARCHE PAS
-// app.get("/choose-song/:id", async (req, res, next) => {
-    
-  //     spotifyApi
-  //       .getTrack(trackId) // ou alors req.params.id ? data.body.tracks.items.id ? uri ?
-  //       .then(data => {
-  //             console.log('The received data from the API: ', data.body);
-  //             res.render('createMemory',  { track: data.body.track.items})
-  //       })
-  //       .catch(function(error) {
-  //         console.error(error);
-  //       })
-  //     });
-  
-
   
 
 // MIDDLEWARES (ALWAYS HAS TO BE BEFORE THE ROUTES)

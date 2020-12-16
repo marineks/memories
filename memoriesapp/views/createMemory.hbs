@@ -4,16 +4,20 @@
     <p class="msg {{msg.status}}">{{msg.txt}}</p>
     {{/if}}
     <h3 class="form-title">Add a new memory to your board</h3>
+
+
     <div class="form-item-wrapper flexed-item">
       <label for="sneaker-name" class="label-name label">Write down your title</label>
       <input id="sneaker-name" type="text" name="title" class="input-text input" placeholder="new log"
         value="">
     </div>
-    <div class="form-item-wrapper flexed-item">
+
+    {{!-- PLAN B YOUTUBE --}}
+    {{!-- <div class="form-item-wrapper flexed-item">
       <label for="sneaker-ref" class="label-ref label">Song</label>
       <input id="sneaker-ref" type="text" name="song" class="input-text input" placeholder="Copy/paste the url of your YT video" value="">
     </div> 
-    
+     --}}
 
      <div class="form-item-wrapper flexed-item">
       <label for="sneaker-size" class="label-ref label">Who I was with</label>
@@ -34,28 +38,14 @@
       <input id="sneaker-price" type="date" name="date" class="sneaker-price input" value="">
     </div>
 
+    
+{{> listofsongs}}
+
+
+
     <button class="button-primary add-sneaker-btn">Add to your board</button> 
-    {{!-- envoyer method custom pour cehcker les values et ajouter preview url --}}
     
-  </form>
 
-  {{!-- PART ABOUT SPOTIFY
-    <form action="/choose-song" method="get">
-      <input type="text" name="search" required>
-      <button>Search for an Artist</button>
-    </form>
-    
-{{#each tracks}}
-
-{{#if this.preview_url}}
-
-<h3>{{this.name}}</h3>
-<audio id="preview" src="{{this.preview_url}}" controls></audio>
-<a href="/choose-song/{{this.trackId}}">Add</a>
-
-{{/if}}
-
-{{/each}}
- END OF PART WITH SPOTIFY --}}
-
+  
+</form>
 

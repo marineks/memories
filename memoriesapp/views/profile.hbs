@@ -1,21 +1,25 @@
 <div>Display all memories</div>
 
+{{#unless allMemories}}
+    <p>Sorry, no memories yet !</p>
+{{/unless}}
+
 {{#each allMemories}}
-<h3>Title: {{this.title}}</h3>
-{{!-- <audio id="preview"
-  src="{{this.song}}" controls>
-</audio> --}}
-<video src="{{this.song}}" controls>
-  Your browser does not support the video tag.
-</video>
-<h3>Description: {{this.description}}</h3>
+  <h3>Title: {{this.title}}</h3>
 
+  <audio id="preview" src="{{this.song}}" controls></audio> 
 
+  <h3>Description: {{this.description}}</h3>
 
-<a href="/memories/{{this._id}}">Click to see more</a>
-<a href="/memories/delete/{{this._id}}">Click to delete</a>
-<a href="/memories/update/{{this._id}}">Click to update</a>
+    <a href="/memories/{{this._id}}">Click to see more</a>
+    <a href="/memories/delete/{{this._id}}">Click to delete</a>
+    <a href="/memories/update/{{this._id}}">Click to update</a>
+    
 {{/each}}
 
 <a href="/memories/create">Create a new memory!</a>
 
+<br>
+{{#if infoUser}}
+<a class="link" href="/users/{{this._id}}">| <i class="fa fa-user fa-1x"></i></a>
+{{/if}}

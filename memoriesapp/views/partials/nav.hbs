@@ -6,14 +6,14 @@
 
     <div class="auth">
         <div class="nav-items">
-            <a href="/auth/signup" id="nav-signup" class="button-ternary flexed-item nav-end-item">
+            <a href="/auth/signup" id="nav-signup" class="linked">
                 <span class="btn-text">Sign up</span>
             </a>
         </div>
 
         {{#unless isLoggedIn}}
         <div class="nav-items">
-            <a href="/auth/signin" id="nav-signin" class="button-ternary flexed-item nav-end-item">
+            <a href="/auth/signin" id="nav-signin" class="linked">
                 <span class="btn-text">Sign In</span>
             </a>
         </div>
@@ -21,13 +21,19 @@
 
         {{#if isLoggedIn}}
                 <div class="nav-items">
-                <a class="link" href="/auth/logout">Log Out</a>
+                    <a class="linked" href="/auth/logout">Log Out</a>
+                </div>
+
+                <div class="nav-items">
+                    <a class="linked" href="/memories/your-profile">Dashboard</a>
                 </div>
 
                 
                 <p id="welcome-back" class="nav-items"> Welcome back, {{username}} !</p>
+                
+
                 <div class="nav-items">
-                    <a class="link" href="/users/{{_id}}">| <i class="fa fa-user fa-1x"></i></a>
+                    <a class="linked" href="/users/{{_id}}">| <i class="fa fa-user fa-1x"></i></a>
                 </div>
                
                 

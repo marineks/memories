@@ -1,22 +1,46 @@
-<div>Display all memories</div>
+<div class="dashboard">
 
-{{#unless allMemories}}
-    <p>Sorry, no memories yet !</p>
-{{/unless}}
+  <div id="sidebar" class="grid-items">
+      
+      <h2 id="title-dashboard">Your dashboard</h2>
+      <p id="text-sidebar"> There once lived an old man and an old woman who were peasants and had to work hard to earn their daily bread. The old man used to go to fix fences and do other odd jobs for the farmers around, and while he was gone the old woman, his wife, did the work of the house and worked in their own little plot of land.</p>
+      <a id="create-mem" href="/memories/create">Create a new memory!</a>
+      <br>
+      <h2>Quote of the click:</h2>
+      <article id="random">
+        “Do it again on the next verse and people think you meant it.” – Chet Atkins
+      </article>
+  </div>
 
-{{#each allMemories}}
-  <h3>Title: {{this.title}}</h3>
+  <div class="mainbar">
+  
+      {{#unless allMemories}}
+          <p>Sorry, no memories yet !</p>
+      {{/unless}}
 
-  <audio id="preview" src="{{this.song}}" controls></audio> 
+      
+      <div id="main-content" class="grid-items">
+        {{#each allMemories}}
+        <div class="one-memory">
+            <h3 id="title-memory"> &#10024 Title: {{this.title}} &#10024 </h3>
 
-  <h3>Description: {{this.description}}</h3>
+            <audio id="preview" src="{{this.song}}" controls></audio> 
 
-    <a href="/memories/{{this._id}}">Click to see more</a>
-    <a href="/memories/delete/{{this._id}}">Click to delete</a>
-    <a href="/memories/update/{{this._id}}">Click to update</a>
+            <h3> &#128338 Date: {{formatDate this.date}}</h3>
+
+            <h3> Mood: {{this.mood}}</h3>
+
+            <a class="mem-links" href="/memories/{{this._id}}"><i class="fas fa-info-circle"></i></a>
+            <a class="mem-links" href="/memories/delete/{{this._id}}"><i class="far fa-trash-alt"></i></a>
+            <a class="mem-links" href="/memories/update/{{this._id}}"><i class="fas fa-edit"></i></a>
+            
+        </div>  
+          {{/each}}
+       </div>
     
-{{/each}}
 
-<a href="/memories/create">Create a new memory!</a>
+</div>
+  
 
-
+  
+</div>

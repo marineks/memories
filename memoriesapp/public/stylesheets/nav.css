@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Pacifico&family=Quattrocento+Sans:wght@700&family=Quicksand&display=swap');
 
 #nav-container {
+    
     background-color: black;
     padding: 2vh;
     display: flex;
@@ -8,6 +9,9 @@
     justify-content: space-between;
     align-items: center;
     margin: 0;
+    /* position: fixed; 
+    top: 0; 
+    width: 100%;  */
 }
 
 .auth {
@@ -29,15 +33,15 @@ a {
     font-family:'Quattrocento Sans', sans-serif;
 }
 
-a:link,
-a:visited {
+.linked:link,
+.linked:visited {
     text-decoration: none;
     color: white;
 }
 
 
-a:hover,
-a:active {
+.linked:hover,
+.linked:active {
     text-decoration: underline;
     color: white;
 }
@@ -56,4 +60,6 @@ a:active {
     color: white;
     font-family: 'Quattrocento Sans', sans-serif;
     font-size: 1em;
+    margin-bottom: 0px;
+    
 }

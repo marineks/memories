@@ -12,7 +12,7 @@ router.get("/your-profile", async (req, res, next) => {
     
     try {
         const infoUser = await UserModel.findById(req.session.currentUser._id)
-        const allMemories = await MemoriesModel.find().sort({ createdAt: -1 })
+        const allMemories = await MemoriesModel.find().sort({ date: -1 })
         //console.log(allMemories)
         res.render("profile", { allMemories, infoUser })
     } catch (err) {

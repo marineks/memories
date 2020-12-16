@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Pacifico&family=Quattrocento+Sans:wght@700&family=Quicksand&display=swap');
+
+.dashboard {
+    display: grid;
+    grid-template-columns: minmax(110px, 20%) 1fr;
+
+}    
+
+.fa-info-circle,
+.fa-trash-alt,
+.fa-edit {
+    color:black;
+    size: 1.5vh;
+    margin: 1.5vh 1vh 1vh 1vh;
+    
+    
+}
+
+#sidebar {
+    /* background-color: rgb(75, 77, 199); */
+    background-color: #f3f3f3;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#main-content {
+    display: flex;
+    /* flex-direction: row; */
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    
+
+}
+
+.one-memory {
+    height: 250px;
+    margin: 1vw 1vw 1vw 2vw;
+    border-radius: 50%;
+    /* border: 1px black solid; */
+    border: none;
+    padding: 2.7vw;
+    width: fit-content;
+    background: #4C00FA;
+    background: -webkit-linear-gradient(top left, #4C00FA, #E66F6E);
+    background: -moz-linear-gradient(top left, #4C00FA, #E66F6E);
+    background: linear-gradient(to bottom right, #4C00FA, #E66F6E);
+    text-align: center;
+}
+
+#title-memory,
+#title-dashboard {
+    margin-top: 4vh;
+}
+
+
+.one-memory:hover {
+    opacity: 0.6;
+    color: rgb(160, 160, 160);
+    border: outset;
+    height: 265px;
+}
+
+#text-sidebar {
+    text-align: justify;
+    margin: 1.5vw;
+}
+
+#create-mem {
+    text-align: center;
+    text-decoration: none;
+    color: rgb(84, 31, 153);
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25em;
+}
+
+#create-mem:hover {
+    text-decoration: underline;
+    color: black;
+    
+}
+
+#random {
+    cursor: pointer;
+    text-align: center;
+    font-style: italic;
+    margin: 1.5vw;
+    font-family: 'Quicksand', sans-serif;
+}

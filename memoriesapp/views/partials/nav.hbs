@@ -1,15 +1,36 @@
-<a href="/auth/signup" id="nav-signup" class="button-ternary flexed-item nav-end-item">
-    <span class="btn-text">Sign up</span>
-</a>
+<div id="nav-container">
 
- {{#unless isLoggedIn}}
-<a href="/auth/signin" id="nav-signin" class="button-ternary flexed-item nav-end-item">
-    <span class="btn-text">Sign In</span>
-</a>
-{{/unless}}
+    <div class="title">
+        <a id="title-app" href="/">Memosic</a>
+    </div>
 
- {{#if isLoggedIn}}
-      
-      <a class="link" href="/auth/logout">Log Out</a>
-      
-{{/if}}
+    <div class="auth">
+        <div class="nav-items">
+            <a href="/auth/signup" id="nav-signup" class="button-ternary flexed-item nav-end-item">
+                <span class="btn-text">Sign up</span>
+            </a>
+        </div>
+
+        {{#unless isLoggedIn}}
+        <div class="nav-items">
+            <a href="/auth/signin" id="nav-signin" class="button-ternary flexed-item nav-end-item">
+                <span class="btn-text">Sign In</span>
+            </a>
+        </div>
+        {{/unless}}
+
+        {{#if isLoggedIn}}
+                <div class="nav-items">
+                <a class="link" href="/auth/logout">Log Out</a>
+                </div>
+
+                
+                <p id="welcome-back" class="nav-items"> Welcome back, {{username}} !</p>
+                <div class="nav-items">
+                    <a class="link" href="/users/{{_id}}">| <i class="fa fa-user fa-1x"></i></a>
+                </div>
+               
+                
+        {{/if}}
+    </div>
+</div>

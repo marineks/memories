@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Pacifico&family=Quattrocento+Sans:wght@700&family=Quicksand&display=swap');
+
+#nav-container {
+    background-color: black;
+    padding: 2vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+}
+
+.auth {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.nav-items {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    color: white;
+    padding: 2vh;
+}
+
+a {
+    font-family:'Quattrocento Sans', sans-serif;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+
+a:hover,
+a:active {
+    text-decoration: underline;
+    color: white;
+}
+
+#title-app {
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    font-family: 'Quattrocento Sans', sans-serif;
+    padding: 0;
+    font-size: 2.2em;
+    letter-spacing: 1.5px;
+}
+
+#welcome-back {
+    color: white;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 1em;
+}

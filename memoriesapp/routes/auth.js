@@ -28,7 +28,7 @@ router.post("/signin", async (req, res, next) => {
       const userDocument = { ...foundUser };
       const userObject = foundUser.toObject();
       delete userObject.password; 
-      req.session.currentUser = userObject; 
+      req.session.currentUser = userObject; // req.session c'est le cookie (en gros)
 
       req.flash("success", "Successfully logged in...");
       res.redirect("/memories/your-profile");

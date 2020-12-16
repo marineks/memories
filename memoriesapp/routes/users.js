@@ -2,10 +2,9 @@ const express = require("express");
 const router = new express.Router();
 const UserModel = require("./../models/Users");
 const protectPrivateRoute = require("./../middlewares/protectPrivateRoute");
-const bcrypt = require("bcrypt");
 
 
-
+// créer une route pour diriger ma home page
 
 // Update user info
 

@@ -56,7 +56,7 @@ router.post("/signup", async (req, res, next) => {
       newUser.password = hashedPassword;
       await UserModel.create(newUser);
       req.flash("success", "You have now registered your account, welcome!");
-      res.redirect("/memories/your-profile");
+      res.redirect("/auth/signin");
     }
   } catch (err) {
     next(err);

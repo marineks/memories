@@ -1,0 +1,26 @@
+<h3>Welcome to your profile dashboard!</h3>
+<p>Check, update or delete your user profile here.</p>
+
+<h1>Information</h1>
+
+
+<p>Your username: {{username}}</p>
+<p>Your email: {{email}}</p>
+{{!-- <p>Your password: {{password}}</p> --}}
+
+
+<h1>Want to update it? Indicate below the new info:</h1>
+
+<form action="/users/update/{{_id}}" method="post">
+
+    <label for="username">New username</label>
+    <input type="text" id="username" name="username" value="">
+
+    <label for="email">New email</label>
+    <input type="text" id="email" name="email" value="">
+
+<button>Confirm the changes ! </button>
+</form>
+<br>
+
+<a href="/users/delete/{{_id}}">Delete your account</a>

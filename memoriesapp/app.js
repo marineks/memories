@@ -15,7 +15,6 @@ const hbs = require("hbs");
 const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
-const SpotifyWebApi = require("spotify-web-api-node");
 const dev_mode = false;
 
 const app = express();

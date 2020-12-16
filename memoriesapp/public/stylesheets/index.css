@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Pacifico&family=Quattrocento+Sans:wght@700&family=Quicksand&display=swap');
+
+#wrapper {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+#section-one,
+#section-three {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding: 5vh;
+}
+
+#section-one {
+    background-color: rgb(164, 180, 143);
+}
+
+#section-two {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(142, 196, 233);
+    padding: 5vh;
+}
+
+#section-three {
+    background-color: rgb(240, 173, 119);
+}
+
+
+.home-titles {
+    font-family: 'Pacifico', cursive;
+    font-size: 2em;
+    text-align: center;
+       
+    
+}
+
+.home-titles:first-child {
+    color: rgb(26, 21, 21);
+}
+
+#bmth,
+#logic,
+#fka {
+    height: auto;
+    width: 15vw;
+    min-width: 70%;
+}
+
+.home-articles {
+    font-family: 'Quicksand', sans-serif;
+    text-align: justify;
+    font-size: 1em;
+    padding: 2.5vw;
+}

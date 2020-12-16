@@ -11,10 +11,10 @@ const SpotifyWebApi = require('spotify-web-api-node');
 router.get("/your-profile", async (req, res, next) => {
     
     try {
-        const infoUser = await UserModel.findById(req.params.id);
-        const allMemories = await MemoriesModel.find().sort({ createdAt: -1 });
+        const infoUser = await UserModel.findById(req.session.currentUser._id)
+        const allMemories = await MemoriesModel.find().sort({ createdAt: -1 })
         //console.log(allMemories)
-        res.render("profile", { allMemories, infoUser });
+        res.render("profile", { allMemories, infoUser })
     } catch (err) {
         next(err);
     }

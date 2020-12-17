@@ -1,0 +1,22 @@
+{
+  "name": "memories",
+  "version": "1.0.0",
+  "description": "Project 2 of Ironhack bootcamp",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "cd ./memoriesapp && npm install && cd ..",
+    "start": "cd ./memoriesapp && npm start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marineks/memories.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marineks/memories/issues"
+  },
+  "homepage": "https://github.com/marineks/memories#readme"
+}

@@ -4,13 +4,12 @@ const Schema = mongoose.Schema;
 const memoriesSchema = new Schema(
   {
     title: String,
-    //imageSong: { type: Schema.Types.ObjectId, ref: "spotifyImg" }, /// WARNING: NOT SURE IT'S CORRECT
-    // song: { type: Schema.Types.ObjectId, ref: "spotifySong" }, /// WARNING: SAME AS ABOVE
-    song: String, // = id de la chanson // req Spotify
+    song: String, 
     waswith: String,
     mood: String,
     description: String,
     date: Date,
+    user_id: { type: Schema.Types.ObjectId, ref: "user" },
     isPublic: { 
       type: Boolean,
       default: false

@@ -19,7 +19,8 @@
         </div>
         {{/unless}}
 
-        {{#if isLoggedIn}}
+        {{#if isLoggedIn}} 
+       
                 <div class="nav-items">
                     <a class="linked" href="/auth/logout">Log Out</a>
                 </div>
@@ -28,14 +29,14 @@
                     <a class="linked" href="/memories/your-profile">Dashboard</a>
                 </div>
 
-                
-                <p id="welcome-back" class="nav-items"> Welcome back, {{username}} !</p>
-                
+                {{#if infoUser}}
+                <p id="welcome-back" class="nav-items"> Welcome back, {{infoUser.username}} !</p>
+                {{/if}}
 
                 <div class="nav-items">
                     <a class="linked" href="/users/{{_id}}">| <i class="fa fa-user fa-1x"></i></a>
                 </div>
-               
+                
                 
         {{/if}}
     </div>

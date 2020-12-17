@@ -6,8 +6,11 @@ const UserModel = require("./../models/Users");
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   try {
-    const infoUser = await UserModel.findById(req.session.currentUser._id);    
-    res.render('index', infoUser);
+    let infoUser;
+    if (req.session.currentUser) {
+        infoUser = await UserModel.findById(req.session.currentUser._id);
+    }
+    res.render('index', {infoUser});
   } catch (err) {
     next(err)
   }

@@ -31,10 +31,11 @@
 
                 {{#if infoUser}}
                 <p id="welcome-back" class="nav-items"> Welcome back, {{infoUser.username}} !</p>
+                <div><img id="avatar" src="{{infoUser.avatar}}" alt=""></div>
                 {{/if}}
 
                 <div class="nav-items">
-                    <a class="linked" href="/users/{{_id}}">| <i class="fa fa-user fa-1x"></i></a>
+                    <a class="linked" href="/users/{{infoUser._id}}">| <i class="fa fa-user fa-1x"></i></a>
                 </div>
                 
                 

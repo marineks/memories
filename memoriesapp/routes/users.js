@@ -52,10 +52,10 @@ router.get("/delete/:id", protectPrivateRoute, async (req, res, next) => {
 // READ user info
 
 // localhost:3000/users/:id
-router.get("/:id", protectPrivateRoute, async (req, res, next) => {
+router.get("/:id", async (req, res, next) => {
     try {
         const infoUser = await UserModel.findById(req.params.id);
-        res.render("manageaccount",  infoUser )
+        res.render("manageaccount",  {infoUser} )
     } catch (err) {
         next(err);
     }

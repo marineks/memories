@@ -63,3 +63,9 @@ a {
     margin-bottom: 0px;
     
 }
+
+#avatar {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}

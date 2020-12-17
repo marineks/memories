@@ -11,9 +11,11 @@ const SpotifyWebApi = require('spotify-web-api-node');
 router.get("/your-profile", async (req, res, next) => {
     
     try {
+      
         const infoUser = await UserModel.findById(req.session.currentUser._id)
-        const allMemories = await MemoriesModel.find().sort({ date: -1 })
-        //console.log(allMemories)
+        //console.log("PLEASE WORK", infoUser); // casse les internets
+        const allMemories = await MemoriesModel.find({user_id : req.session.currentUser._id}).populate("user_id").sort({ date: -1 })
+        console.log(allMemories)
         res.render("profile", { allMemories, infoUser })
     } catch (err) {
         next(err);
@@ -29,7 +31,9 @@ router.get("/create", protectPrivateRoute, (req, res) => {
 // Route: CREATE POST localhost:3000/memories/create
 router.post("/create", protectPrivateRoute, async (req, res, next) => {
       try {
-        const createMem = { ...req.body }
+
+        let createMem = { ...req.body };
+        createMem.user_id = req.session.currentUser._id;
         await MemoriesModel.create(createMem);
         console.log(req.body); 
         res.redirect("/memories/your-profile");

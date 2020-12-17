@@ -5,7 +5,11 @@ const userSchema = new Schema({
   username: String,
   email: { type: String, unique: true },
   password: String,
-  memory_id: { type: Schema.Types.ObjectId, ref: "memory" },
+  about: String,
+  // avatar: {
+  //   type: String,
+  //   default: "./../public/images/neon-avatar.png"
+  // },
   role: { type: String, enum: ["admin", "user", "editor"], default: "user" },
 });
 

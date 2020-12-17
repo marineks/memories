@@ -4,12 +4,12 @@ require("./../config/mongo"); // fetch the db connection
 const UserModel = require("./../models/Users");
 
 const users = [
-    { username: "foo", email: "foo@foo.foo", password: "JS", role: "admin" },
-    { username: "bar", email: "bar@bar.bar", password: "Go", role: "user" },
-    { username: "baz", email: "baz@baz.baz", password: "Rust", role: "user" },
-    { username: "jane", email: "jane@doe.org", password: "Java", role: "user" },
+    { username: "Frank", email: "foo@foo.foo", password: "JS", role: "admin", about:"Lead teacher at Ironhack" },
+    { username: "Jacqueline", email: "bar@bar.bar", password: "Go", role: "user", about:"Badass Canadian expat with good music taste" },
+    { username: "Julie", email: "baz@baz.baz", password: "Rust", role: "user", about:"One direction fan girl" },
+    { username: "Marine", email: "jane@doe.org", password: "Java", role: "user", about:"Weirdo with eclectic music choices" },
     {
-      username: "bill",
+      username: "Bill",
       email: "bill@bascora.bizz",
       password: "PHP",
       role: "user",

@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Pacifico&family=Quattrocento+Sans:wght@700&family=Quicksand&display=swap');
+
+.search-title {
+    background-color: black;
+    color: white;
+    margin: 10px 600px 10px 600px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 10px 0 10px 0;
+    font-size: 25px;
+    transition: 0.5s ;
+    
+}
+
+.top-line {
+    margin-top: 170px;
+}
+
+.search-title:hover {
+    background-color: rgb(105, 32, 201);
+    /* color: white;
+    margin: 10px 600px 10px 600px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 10px 0 10px 0;
+    font-size: 25px;
+    margin-top: 175px; */
+}
+
+.search-subtitle {
+    
+    color: rgb(12, 12, 12);
+    margin: 10px 600px 10px 600px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 10px 0 10px 0;
+}
+
+#gif-music {
+    width: 336px;
+    height: auto;
+    margin-left: 768px;
+}
+
+.form-search {
+    border-radius: 25px;
+    border: none;
+    color: grey;
+    font-family: 'Pacifico', cursive;
+    margin: 50px 0px 120px 780px;
+}
+
+
+#tune {
+    background-color: white;
+    background-image: url('/images/tune.gif');
+    background-size: 50%;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 40px;
+      
+}
+
+#btn-search {
+
+}

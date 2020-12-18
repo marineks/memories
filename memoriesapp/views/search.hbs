@@ -1,8 +1,10 @@
-<h3 class="form-title">Add a new memory to your board</h3>
-<h3 class="form-title">First step: Choose your song!</h3>
+<h3 class="search-title top-line">Add a new memory to your board</h3>
+<h3 class="search-subtitle">First step: Choose your song!</h3>
 
-<form action="/memories/choose-song" method="get">
-      <input type="text" name="search" required>
-      <button>Search for an Artist</button>
-    </form>
+<img src="/images/choose.gif" alt=" - " id="gif-music">
+
+<form action="/memories/choose-song" method="get" class="form-search">
+      <input id="tune" type="text" name="search" placeholder="Type here!" required>
+      <button id="btn-search">Search</button>
+</form>
  

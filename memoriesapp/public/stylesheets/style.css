@@ -10,6 +10,8 @@
 @import url("./oneMemory.css");
 @import url("./search.css");
 @import url("./createdit.css");
+@import url("./edit.css");
+
 
 body {
   padding: 0;

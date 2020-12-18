@@ -1,0 +1,12 @@
+.plsflex {
+    display:flex;
+    flex-direction: column;
+}
+
+.putleft {
+    margin-left: 48px;
+}
+
+#putleftone {
+    margin-left: 10px;
+}

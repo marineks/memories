@@ -1,51 +1,60 @@
-  <form action="/memories/create" method="post" class="add-product-form">
-    {{#if msg}}
-    <p class="msg {{msg.statu}}">{{msg.txt}}</p>
-    <p class="msg {{msg.status}}">{{msg.txt}}</p>
-    {{/if}}
-    <h3 class="form-title">Add a new memory to your board</h3>
+  
+  
+  <div class="all">
+
+    <form action="/memories/create" method="post" class="memory-form">
+
+        {{#if msg}}
+        <p class="msg {{msg.statu}}">{{msg.txt}}</p>
+        <p class="msg {{msg.status}}">{{msg.txt}}</p>
+        {{/if}}
+    <div class="leftside">
+     
+      <h3 class="mem-title">Add a new memory to your board</h3>
+
+      <div class="form-song flexed-item">
+
+        <label class="sneaker-size"  id="labeltop" for="sneaker-name" class="label-name label">  &#9925; Write down your title</label>
+        <input class="sneaker-size"  id="sneaker-name" type="text" name="title" class="input-text input" placeholder="New log"
+          value="">
+      </div>
+
+      {{!-- PLAN B YOUTUBE --}}
+      {{!-- <div class="form-item-wrapper flexed-item">
+        <label for="sneaker-ref" class="label-ref label">Song</label>
+        <input id="sneaker-ref" type="text" name="song" class="input-text input" placeholder="Copy/paste the url of your YT video" value="">
+      </div> 
+      --}}
+
+      <div class="form-song flexed-item">
+        <label class="sneaker-size"  for="sneaker-size" class="label-ref label"> &#10024; Who I was with</label>
+        <input class="sneaker-size"  id="sneaker-size" type="text" name="waswith" class="input-text input" placeholder="Friends, family..." value="">
+      </div>
+      <div class="form-song flexed-item">
+        <label class="sneaker-size"  for="sneaker-with" class="label-ref label"> &#127793; Mood</label>
+        <input class="sneaker-size"  id="sneaker-with" type="text" name="mood" class="input-text input" placeholder="Happy, angry, grateful..." value="">
+      </div>
+      <div class="form-song flexed-item">
+        <label class="sneaker-size"  for="sneaker-descr" class="label-descr label"> &#127865; Description</label>
+        <input class="sneaker-size"  id="sneaker-descr" type="text" name="description" class="input-text input"
+          placeholder="My day began like this..." value="">
+      </div>
+      <div class="form-song flexed-item">
+        <label class="sneaker-size"  for="sneaker-price" class="label-price label"> &#127906; Date</label>
+        
+        <input class="sneaker-size"  id="sneaker-price" type="date" name="date" class="sneaker-price input" value="">
+      </div>
+      </div>
+
+      <div class="rightside">
+        {{> listofsongs}}
+      </div>
 
 
-    <div class="form-item-wrapper flexed-item">
-      <label for="sneaker-name" class="label-name label">Write down your title</label>
-      <input id="sneaker-name" type="text" name="title" class="input-text input" placeholder="new log"
-        value="">
-    </div>
-
-    {{!-- PLAN B YOUTUBE --}}
-    {{!-- <div class="form-item-wrapper flexed-item">
-      <label for="sneaker-ref" class="label-ref label">Song</label>
-      <input id="sneaker-ref" type="text" name="song" class="input-text input" placeholder="Copy/paste the url of your YT video" value="">
-    </div> 
-     --}}
-
-     <div class="form-item-wrapper flexed-item">
-      <label for="sneaker-size" class="label-ref label">Who I was with</label>
-      <input id="sneaker-size" type="text" name="waswith" class="input-text input" placeholder="ex: 37" value="">
-    </div>
-    <div class="form-item-wrapper flexed-item">
-      <label for="sneaker-size" class="label-ref label">Mood</label>
-      <input id="sneaker-size" type="text" name="mood" class="input-text input" placeholder="ex: 37" value="">
-    </div>
-    <div class="form-item-wrapper flexed-item">
-      <label for="sneaker-descr" class="label-descr label">Description</label>
-      <input id="sneaker-descr" type="text" name="description" class="input-text input"
-        placeholder="The better sneakers to run" value="">
-    </div>
-    <div class="form-item-wrapper flexed-item">
-      <label for="sneaker-price" class="label-price label">Date</label>
-      
-      <input id="sneaker-price" type="date" name="date" class="sneaker-price input" value="">
-    </div>
-
-    
-{{> listofsongs}}
-
-
-
-    <button class="button-primary add-sneaker-btn">Add to your board</button> 
+      <button class="btn-confirm"> &#127932; Add to your dashboard</button> 
     
 
   
-</form>
+  </form>
 
+</div>

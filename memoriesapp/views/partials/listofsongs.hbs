@@ -1,13 +1,16 @@
 {{#each tracks}}
 
   {{#if this.preview_url}}
+  <div class="list-of-songs">
+
+    <h3 class="title-song">{{this.name}}</h3>
+    <audio class="audio-song" id="preview" src="{{this.preview_url}}" controls></audio> 
+
+
+    <input class="input-song" type="radio" name="song" value="{{this.preview_url}}">
+    <br><a class="link-song" href="{{this.external_urls.spotify}}"> Check the full song</a>
   
-  <h3>{{this.name}}</h3>
-  <audio id="preview" src="{{this.preview_url}}" controls></audio> 
-  <a href="{{this.external_urls.spotify}}"> Check the full song</a>
-
-  <input type="radio" name="song" value="{{this.preview_url}}">
-
+  </div>
 
   {{/if}}
 

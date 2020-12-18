@@ -61,7 +61,7 @@ router.post("/create", protectPrivateRoute, async (req, res, next) => {
     router.get("/choose-song", async (req, res) => {
       
         spotifyApi
-        .searchTracks(req.query.search)
+        .searchTracks(req.query.search, {limit: 8})
         .then(data => {
                 console.log('The received data from the API: ', data.body.tracks.items[1].album)
                 res.render('createMemory',  { tracks: data.body.tracks.items})

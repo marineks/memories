@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Pacifico&family=Quattrocento+Sans:wght@700&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+.polaroid {
+    border: 1px black solid;
+    padding: 10px;
+    margin: 150px 450px 150px 450px;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    outline: 1.5px rgb(209, 205, 214) solid;
+}
+
+
+#pola-top {
+    border: 1px black solid;
+    padding: 29px 164px 31px 155px;
+    margin: 0 10px 0 10px;
+    background: #4C00FA;
+    background: -webkit-linear-gradient(top left, #4C00FA, #E66F6E);
+    background: -moz-linear-gradient(top left, #4C00FA, #E66F6E);
+    background: linear-gradient(to bottom right, #4C00FA, #E66F6E);
+}
+
+#details-title {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2em;
+}
+
+.details-subtitle {
+    padding-left: 15px;
+    font-family: 'Quicksand', sans-serif;
+    
+}
+
+.bold-title {
+    font-size: 22px;
+    font-family: 'Quattrocento Sans', sans-serif;
+
+}
+
+.audio-player {
+    padding-left: 142px;
+}

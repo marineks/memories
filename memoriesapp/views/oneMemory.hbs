@@ -1,8 +1,31 @@
-<div>The details of your memory:</div>
-<h3>Title: {{title}}</h3>
-<audio id="preview" src="{{this.song}}" controls></audio>
-<h3>Who I was with: {{waswith}} </h3> 
-<h3>My mood this day: {{mood}}</h3>
-<h3>Full description of my memory: {{description}}</h3>
-<h3>Date: {{formatDate date}}</h3>
-<a href="/memories/your-profile">Go back to your profile</a>
+<div class="dashboard">
+
+<div id="sidebar" class="grid-items">
+      
+      <h2 id="title-dashboard">Your dashboard</h2>
+      <p id="text-sidebar"> There once lived an old man and an old woman who were peasants and had to work hard to earn their daily bread. The old man used to go to fix fences and do other odd jobs for the farmers around, and while he was gone the old woman, his wife, did the work of the house and worked in their own little plot of land.</p>
+      <a id="create-mem" href="/memories/create">Create a new memory!</a>
+      <br>
+      <h2>Quote of the click:</h2>
+      <article id="random">
+        “Do it again on the next verse and people think you meant it.” – Chet Atkins
+      </article>
+  </div>
+
+<div class="mainbar">
+
+    <div class="polaroid">
+        <div id="pola-top"><p id="details-title">THE DETAILS OF YOUR MEMORY</p></div>
+        <h3 class="details-subtitle"> <span class="bold-title"> &#9925; Title:</span> {{title}}</h3>
+        <audio id="preview" class="details-subtitle audio-player" src="{{this.song}}" controls></audio>
+        <h3 class="details-subtitle"><span class="bold-title">&#10024; Who I was with:</span> {{waswith}} </h3> 
+        <h3 class="details-subtitle"><span class="bold-title">&#127793; My mood this day:</span> {{mood}}</h3>
+        <h3 class="details-subtitle"><span class="bold-title"> &#127865; Full description of my memory:</span> {{description}}</h3>
+        <h3 class="details-subtitle"><span class="bold-title">&#127906; Date:</span> {{formatDate date}}</h3>
+        
+    </div>  
+
+        <a href="/memories/your-profile">Go back to your profile</a>
+</div>
+
+</div>

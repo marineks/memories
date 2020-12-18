@@ -15,7 +15,7 @@ router.get("/your-profile", async (req, res, next) => {
         const infoUser = await UserModel.findById(req.session.currentUser._id)
         //console.log("PLEASE WORK", infoUser); // casse les internets
         const allMemories = await MemoriesModel.find({user_id : req.session.currentUser._id}).populate("user_id").sort({ date: -1 })
-        console.log(allMemories)
+        //console.log(allMemories)
         res.render("profile", { allMemories, infoUser })
     } catch (err) {
         next(err);
@@ -35,7 +35,7 @@ router.post("/create", protectPrivateRoute, async (req, res, next) => {
         let createMem = { ...req.body };
         createMem.user_id = req.session.currentUser._id;
         await MemoriesModel.create(createMem);
-        console.log(req.body); 
+        //console.log(req.body); 
         res.redirect("/memories/your-profile");
       } catch (err) {
         next(err);
@@ -51,9 +51,6 @@ router.post("/create", protectPrivateRoute, async (req, res, next) => {
     clientSecret: process.env.CLIENT_SECRET
   });
 
-
-  
-  
   spotifyApi
   .clientCredentialsGrant()
   .then(data => spotifyApi.setAccessToken(data.body['access_token']))
@@ -66,12 +63,13 @@ router.post("/create", protectPrivateRoute, async (req, res, next) => {
         spotifyApi
         .searchTracks(req.query.search)
         .then(data => {
-                console.log('The received data from the API: ', data.body);
+                console.log('The received data from the API: ', data.body.tracks.items[1].album)
                 res.render('createMemory',  { tracks: data.body.tracks.items})
             })
         .catch(err => console.log('The error while searching artists occurred: ', err));
   
       });
+
   
 
 //// READ A MEMORY
@@ -102,7 +100,7 @@ router.get("/delete/:id", protectPrivateRoute, async (req, res, next) => {
 router.get("/update/:id", protectPrivateRoute, async (req, res, next) => {
     try {
       const updateMemory = await MemoriesModel.findById(req.params.id);
-      console.log(req.params.id);
+      //console.log(req.params.id);
       res.render("editMemory", updateMemory);
     } catch (err) {
       next(err);

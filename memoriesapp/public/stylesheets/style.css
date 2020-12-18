@@ -6,6 +6,7 @@
 @import url("./dashboard.css");
 @import url("./mod.message.css");
 @import url("./sign-in-up.css");
+@import url("./account.css");
 
 body {
   padding: 0;

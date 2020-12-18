@@ -1,29 +1,41 @@
+
 <section class="sign form-container">
-    <header class="form-header">
-        <h1 class="form-title">Welcome Back to Rememories</h1>
-        <p class="form-subtitle">Your memories through music </p>
-    </header>
+
+     <div class="item-form"></div>
+        <header class="form-header">
+            <h1 class="form-title">Welcome Back to Memosic</h1>
+            <p class="form-subtitle">Your memories through music </p>
+        </header>
+    </div>
 
     {{#if msg}}
     <p class="message {{msg.status}}">{{msg.text}}</p>
     {{/if}}
 
-    <form method="post" action="/auth/signin" id="form_user">
+    <div class="item-form">
+        <form method="post" action="/auth/signin" id="form-user">
 
-          <div class="form-item-wrapper flexed-item">
-            <label for="email" class="label-ref label">Email</label>
-            <input id="email" type="text" name="email" class="input-text input" placeholder="foo@foo.foo" required
-                value="foo@foo.foo">
-        </div>
-        <div class="form-item-wrapper flexed-item">
-            <label for="password" class="label-ref label">Password</label>
-            <input id="password" type="password" name="password" class="input-text input" placeholder="••••••" required
-                value="1234">
-        </div>
+            <div class="form-item-wrapper">
+                <label for="email" class="label-ref label">Email</label>
+                <input id="email" type="text" name="email" class="input-text input" placeholder="foo@foo.foo" required
+                    value="foo@foo.foo">
+            </div>
+            <div class="form-item-wrapper">
+                <label for="password" class="label-ref label">Password</label>
+                <input id="password" type="password" name="password" class="input-text input" placeholder="••••••" required
+                    value="1234">
+            </div>
 
 
-        <button class="button-primary white">Log in !</button>
-    </form>
-    <p class="form-sub-infos">Don't have an account yet ? <a href="/auth/signup" class="button-link-form">Sign Up</a>
-    </p>
+            <button class="button-primary white">Log in !</button>
+        </form>
+    </div>
+
+    <div class="item-form">
+        <p class="form-sub-infos">Don't have an account yet ? <a href="/auth/signup" class="button-link-form">Sign Up</a>
+        </p>
+    </div>
+
 </section>
+
+   

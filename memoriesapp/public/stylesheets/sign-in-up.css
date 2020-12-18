@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Pacifico&family=Quattrocento+Sans:wght@700&family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+
+.form-container {
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 9em 48em;
+    padding: 5rem;
+    border :black 2px solid;
+    border-radius: 8%;
+    font-family: 'Quattrocento Sans', sans-serif;
+    box-shadow: 10px 5px 5px black;
+    background: color;
+    z-index:7;
+   
+}
+
+.form-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2em;
+    text-align: center;
+    color: #822bd4;
+}
+
+.form-subtitle {
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5em;
+}
+
+#form-user {
+    display:flex;
+    flex-direction: column;
+}
+
+.form-item-wrapper {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.button-primary {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: none;
+    outline: none;
+    padding: 10px 5px 10px 5px;
+    background: #822bd4;
+    color: white;
+    padding: 12px 0;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+.button-primary:hover {
+    background: #7f40f5;
+    box-shadow: 0px 4px 35px -5px #7f40f5;
+    cursor: pointer;
+}
+
+#password,
+#email,
+#username {
+    border: none;
+    outline: none;
+    background: rgb(243, 240, 240);
+    padding: 5px 0 5px 0px;
+}
+

@@ -58,8 +58,8 @@
 .one-memory:hover {
     opacity: 0.6;
     color: rgb(160, 160, 160);
-    border: outset;
-    height: 265px;
+    
+   
 }
 
 #text-sidebar {
@@ -71,8 +71,9 @@
     text-align: center;
     text-decoration: none;
     color: rgb(84, 31, 153);
-    font-family: 'DM Serif Display', serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 1.25em;
+    padding-top: 20px;
 }
 
 #create-mem:hover {
@@ -87,4 +88,14 @@
     font-style: italic;
     margin: 1.5vw;
     font-family: 'Quicksand', sans-serif;
+}
+
+#unless {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.7rem;
+    padding-top: 350px;
+    padding-bottom: 300px;
 }

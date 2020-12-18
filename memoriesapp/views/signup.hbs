@@ -1,23 +1,26 @@
+<div id="fond"></div>
+
+
 <section class="sign form-container">
     <header class="form-header">
-        <h1 class="form-title">Welcome to Rememories</h1>
+        <h1 class="form-title">Welcome to Memosic</h1>
         <p class="form-subtitle"> Create your account </p>
     </header>
     {{#if msg}}
     <p class="message {{msg.status}}">{{msg.text}}</p>
     {{/if}}
-    <form method="post" action="/auth/signup" id="form_user">
-        <div class="form-item-wrapper flexed-item">
+    <form method="post" action="/auth/signup" id="form-user">
+        <div class="form-item-wrapper">
             <label for="username" class="label-ref label">Username</label>
             <input id="username" type="text" name="username" class="input-text input" placeholder="jumagatron" required
                 value="bar">
         </div>
-        <div class="form-item-wrapper flexed-item">
+        <div class="form-item-wrapper">
             <label for="email" class="label-ref label">Email</label>
             <input id="email" type="text" name="email" class="input-text input" placeholder="foo@foo.foo" required
                 value="foo@foo.foo">
         </div>
-        <div class="form-item-wrapper flexed-item">
+        <div class="form-item-wrapper">
             <label for="password" class="label-ref label">Password</label>
             <input id="password" type="password" name="password" class="input-text input" placeholder="••••••" required
                 value="1234">

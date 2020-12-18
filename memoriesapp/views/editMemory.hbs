@@ -4,29 +4,37 @@
 
     <h3 class="form-title"> Edit your Memory!</h3>
     <div class="form-item-wrapper flexed-item">
+
       <label for="sneaker-name" class="label-name label">Title</label>
       <input id="sneaker-name" type="text" name="title" placeholder="Change title" value="{{title}}">
     </div>
-    <div class="form-item-wrapper flexed-item">
+
+    {{!-- <div class="form-item-wrapper flexed-item">
       <label for="sneaker-ref" class="label-ref label">Song</label>
       <input id="sneaker-ref" type="text" name="song" placeholder="ex: NV23498" value="{{song}}">
-    </div>
+    </div> --}}
+
     <div class="form-item-wrapper flexed-item">
       <label for="sneaker-size" class="label-ref label">Description</label>
       <input id="sneaker-size" type="text" name="description" placeholder="ex: 37" value="{{description}}">
     </div>
+
     <div class="form-item-wrapper flexed-item">
       <label for="sneaker-size" class="label-ref label">Who I was with</label>
       <input id="sneaker-size" type="text" name="waswith" placeholder="ex: 37" value="{{waswith}}">
     </div>
+
     <div class="form-item-wrapper flexed-item">
       <label for="sneaker-descr" class="label-descr label">Mood</label>
       <input id="sneaker-descr" type="text" name="mood" placeholder="The better sneakers to run" value="{{mood}}">
     </div>
+
     <div class="form-item-wrapper flexed-item">
       <label for="sneaker-price" class="label-price label">Date</label>
       <input id="sneaker-price" type="date" name="price" class="sneaker-price input" min="1" value="{{formatDate date}}">
     </div>
+
+    {{> listofsongs}}
     
     <button class="button-primary add-sneaker-btn">Click to confirm</button>
   </form>

@@ -19,3 +19,5 @@ funFact.addEventListener("click", () => {
     funFact.innerHTML = randomQuotes[randomNumber];
     funFact.innerHTML = ` "${randomQuotes[randomNumber]}" `;
 });
+
+

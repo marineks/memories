@@ -1,26 +1,46 @@
-<h3>Welcome to your profile dashboard!</h3>
-<p>Check, update or delete your user profile here.</p>
-
-<h1>Information</h1>
+<h3 class="account-header">Welcome to your profile dashboard!</h3>
 
 
-<p>Your username: {{infoUser.username}}</p>
-<p>Your email: {{infoUser.email}}</p>
-{{!-- <p>Your password: {{password}}</p> --}}
+<div class="flexer">
+        <div id="left">
+
+            <h1>Information</h1>
 
 
-<h1>Want to update it? Indicate below the new info:</h1>
+            <p> &#129418 <span class="txt-info">Your username: </span> {{infoUser.username}}</p>
+            <p> &#127928 <span class="txt-info">Your email: </span> {{infoUser.email}}</p>
+            <p> &#129408 <span class="txt-info">Describe yourself: </span> {{infoUser.about}}</p>
+            
+            <h1>Want to update it? <br> Indicate below the new info:</h1>
 
-<form action="/users/update/{{_id}}" method="post">
+            <form id="form-toflex" action="/users/update/{{infoUser._id}}" method="post">
 
-    <label for="username">New username</label>
-    <input type="text" id="username" name="username" value="">
 
-    <label for="email">New email</label>
-    <input type="text" id="email" name="email" value="">
+                <div class="toflex">
+                    <label class="label-down" for="username"> &#127888 New username</label>
+                    <input type="text" id="username" name="username" value="">
+                </div>
 
-<button>Confirm the changes ! </button>
-</form>
-<br>
+                <div class="toflex">
+                    <label class="label-down" for="email"> &#127882 New email</label>
+                    <input type="text" id="email" name="email" value="">
+                </div>
+                
+                <div class="toflex">
+                    <label class="label-down" for="about"> &#127871 Change your description</label>
+                    <input type="text" id="about" name="about" value="" placeholder="">
+                </div>
 
-<a href="/users/delete/{{infoUser._id}}">Delete your account</a>
+            <button id="btn">Confirm the changes ! </button>
+            </form>
+            <br>
+
+            <a href="/users/delete/{{infoUser._id}}">Delete your account</a>
+
+        </div>
+
+        <div id="droite">
+            <img id="rire-de-droite" src="/images/sign.jpeg" alt="">
+        </div>
+
+</div>

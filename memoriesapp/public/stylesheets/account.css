@@ -1,0 +1,64 @@
+.flexer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#rire-de-droite {
+    object-fit: contain;
+    width: 367px;
+    margin-bottom: 79px;
+}
+
+#left {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.account-header {
+    text-align: center;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 2rem;
+}
+
+.toflex {
+    display:flex;
+    flex-direction: column;
+    padding: 0 15px 0 15px;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+#btn {
+    padding: 1px;
+    border: none;
+    outline: none;
+    padding: 10px 5px 10px 5px;
+    background: #822bd4;
+    color: white;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    font-family: 'Quattrocento Sans', sans-serif;
+}
+
+
+.btn:hover {
+    background: #7f40f5;
+    box-shadow: 0px 4px 35px -5px #7f40f5;
+    cursor: pointer;
+}
+
+#form-toflex {
+    display: flex;
+    justify-content: space-around;
+}
+
+.txt-info {
+    font-weight: 600;
+}
+
+.label-down {
+    margin-bottom: 10px;
+}
